@@ -1,0 +1,9 @@
+.openai/
+outputs/
+node_modules/
+.env
+.env.*
+!.env.example
+*.tar.gz
+.DS_Store
+Thumbs.db
