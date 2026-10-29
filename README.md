@@ -6,6 +6,10 @@ FlirtLive is a premium live social streaming **front-end prototype** for an adul
 
 ![FlirtLive home page showing the featured host, discovery filters, and host grid](flirtlive-home.png)
 
+## Project showcase
+
+The home screenshot above is an actual capture from the initial demo build. Additional live-room, discovery, leaderboard, wallet, profile, and mobile captures are pending browser access; no generated mockups are presented as tested application screenshots.
+
 ## Project status
 
 This is an interactive browser demo, not an operational webcam service. Host identities, viewer counts, rankings, messages, and stream status are sample data. Room backgrounds are still portraits, not live video. The pictured models are stock-photo subjects and are not represented as actual platform hosts. No explicit content is included.
@@ -79,7 +83,7 @@ FlirtLive/
 
 ## Data behavior and limitations
 
-The `flirtlive` localStorage entry stores the coin balance, following list, profile name/bio/avatar, and coins gifted. The separate `hostInterest` entry stores hosting interest. These values belong to one browser on one device; they are not synchronized, authenticated, or tamper-resistant. Clear those entries to reset the demo. Room chat messages are transient and disappear when the room is rendered again or the page reloads. Do not use the demo for sensitive information or real monetary balances.
+The `flirtlive` localStorage entry stores the coin balance, following list, profile name/bio/avatar, and coins gifted. The separate `hostInterest` entry stores hosting interest. These values belong to one browser on one device; they are not synchronized, authenticated, or tamper-resistant. Clear those entries to reset the demo. Room chat messages and gift notifications persist locally, with up to 100 entries per room. They are not shared with other users. Do not use the demo for sensitive information or real monetary balances.
 
 Photo uploads accept image files up to 2 MB and store them locally. Large images can exceed browser storage quotas. External images and fonts require an internet connection. Profile XP and level indicators are illustrative, not a progression engine.
 
@@ -99,7 +103,7 @@ The current browser demo has no backend, database, payment integration, streamin
 
 ## Validation
 
-The JavaScript was checked with `node --check dist/app.js`. Home and room rendering were checked in a browser during the prototype build. This repository does not yet contain an automated test suite.
+Run `node --check dist/app.js` and `node --test tests/demo.test.cjs`. Five regression tests cover routes/discovery, wallet/gifts, chat/follow persistence, profile saving, and storage recovery using a simulated DOM. See [the verification report](docs/VERIFICATION.md) for evidence and limits. Fresh live browser verification and additional page screenshots are pending because browser use is disabled in Work settings.
 
 ## Images and licensing
 
